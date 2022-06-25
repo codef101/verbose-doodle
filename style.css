@@ -1,0 +1,340 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Tahoma, Serif;
+    color: #263238;
+}
+hr {
+    border-top: 5px solid green;
+    border-radius: 5px;
+}
+nav {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #cfd8dc;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    list-style: none;
+}
+
+nav li {
+    padding-left: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0d47a1
+}
+
+/* 
+    Extra small devices (phones, 600px and down) 
+  */
+@media only screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding-top: 0.5rem;
+    }
+
+    nav li {
+        padding: 0.5rem 0;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+/* Add some margins for each label */
+.form-inline label {
+    margin: 5px 10px 5px 0;
+    width: 20%;
+}
+
+/* Style the input fields */
+.form-inline input {
+    vertical-align: middle;
+    width: 70%;
+
+    margin: 0;
+    padding: 0px;
+    border: none;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.form-inline textarea {
+    vertical-align: middle;
+    margin: 0;
+    width: 70%;
+
+    padding: 0px;
+    border: none;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.form-inline button:hover {
+    background-color: royalblue;
+}
+
+#save {
+    background-color: rgb(85, 131, 241);
+    border: 1px solid rgb(85, 131, 241);
+
+}
+
+#find {
+    background-color: rgb(86, 204, 240);
+    border: none;
+}
+
+#clear {
+    background-color: rgb(129, 145, 134);
+    border: none;
+
+}
+
+#delete {
+    background-color: rgb(240, 62, 62);
+    border: none;
+
+}
+#modify {
+    background-color: rgb(248, 91, 222);
+    border: none;
+
+}
+#Contact_me {
+    background-color: rgb(240, 226, 100);
+    border: none;
+
+}
+
+
+.button {
+    padding: 10px 17px 10px 17px;
+    font: 15px Ubuntu;
+    color: white;
+    margin-inline: 1rem;
+    border-radius: 7px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+#save span:after {
+    font-family: FontAwesome;
+    content: "\f0c7";
+}
+
+#find span:after {
+    font-family: FontAwesome;
+    content: "\f002";
+}
+
+#find span:after {
+    font-family: FontAwesome;
+    content: "\f002";
+}
+
+#modify span:after {
+    font-family: FontAwesome;
+    content: "\f044";
+}
+
+#modify span:after {
+    font-family: FontAwesome;
+    content: "\f044";
+}
+#delete span:after {
+    font-family: FontAwesome;
+    content: "\f2ed";
+}
+
+#delete span:after {
+    font-family: FontAwesome;
+    content: "\f2ed";
+}
+#clear span:after {
+    font-family: FontAwesome;
+    content: "\f0e2";
+}
+
+#clear span:after {
+    font-family: FontAwesome;
+    content: "\f0e2";
+}
+
+
+.radio input[type=radio] {
+    position: absolute;
+    opacity: 0;
+}
+
+.radio input[type=radio]+.radio-label:before {
+    content: "";
+    background: #f4f4f4;
+    border-radius: 100%;
+    border: 1px solid #b4b4b4;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    position: relative;
+    top: -0.2em;
+    margin-right: 1em;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+.radio input[type=radio]:checked+.radio-label:before {
+    background-color: #3197EE;
+    box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+
+.radio input[type=radio]:focus+.radio-label:before {
+    outline: none;
+    border-color: #3197EE;
+}
+
+.radio input[type=radio]:disabled+.radio-label:before {
+    box-shadow: inset 0 0 0 4px #f4f4f4;
+    border-color: #b4b4b4;
+    background: #b4b4b4;
+}
+
+.radio input[type=radio]+.radio-label:empty:before {
+    margin-right: 0;
+}
+
+.checkbox input[type="checkbox"] {
+    opacity: 0;
+}
+
+.checkbox label {
+    position: relative;
+    display: inline-block;
+    
+    /*16px width of fake checkbox + 6px distance between fake checkbox and text*/
+    padding-left: 22px;
+}
+
+.checkbox label::before,
+.checkbox label::after {
+    position: absolute;
+    content: "";
+    
+    /*Needed for the line-height to take effect*/
+    display: inline-block;
+}
+
+/*Outer box of the fake checkbox*/
+.checkbox label::before{
+    height: 16px;
+    width: 16px;
+    
+    border: 1px solid;
+    left: 0px;
+    
+    /*(24px line-height - 16px height of fake checkbox) / 2 - 1px for the border
+     *to vertically center it.
+     */
+    top: 3px;
+}
+
+/*Checkmark of the fake checkbox*/
+.checkbox label::after {
+    height: 5px;
+    width: 9px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    
+    transform: rotate(-45deg);
+    
+    left: 4px;
+    top: 7px;
+}
+
+/*Hide the checkmark by default*/
+.checkbox input[type="checkbox"] + label::after {
+    content: none;
+}
+
+/*Unhide on the checked state*/
+.checkbox input[type="checkbox"]:checked + label::after {
+    content: "";
+}
+
+/*Adding focus styles on the outer-box of the fake checkbox*/
+.checkbox input[type="checkbox"]:focus + label::before {
+    outline: rgb(59, 153, 252) auto 5px;
+}
+
+   /* The alert message box */
+   .alert {
+    padding: 10px;
+    background-color: #a3aedb;
+    /* Red */
+    color: white;
+
+    opacity: 1;
+    transition: opacity 0.6s;
+    /* 600ms to fade out */
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
