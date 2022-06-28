@@ -1,5 +1,22 @@
+ <!-- *****************************
+  Page Name  : Contact_me_Controller
+  Author     : Juwane Jules
+  Your URL   : ocelot.aul.fiu.edu/~jjule017
+  Course     : CGS 4854  Pgm3b_4
+  Purpose    : Calls ContactMeSend.php 
+
+  Due Date   : 07/02/2022
+
+  Certification: 
+
+  I hereby certify that this work is my own and none of it is the work of any other person. 
+
+  ..........Juwane Jules..........
+  ***************************** -->
 <?php
-$to = "email@example.com";
+session_start();
+
+$to = 'michael.robinson@cs.fiu.edu';
 $subject = "Contact me";
 
 $message = "
@@ -10,7 +27,7 @@ $message = "
 <body>
 <table>
 <tr>
-<td>Your Email </td>
+<td> Email </td>
 <td>".$_POST['email']."</td>
 </tr>
 
@@ -57,11 +74,11 @@ $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 $headers .= 'From:'.$_POST['email'] . "\r\n";
 
 $mail = mail($to,$subject,$message,$headers);
-echo $mail;
-exit;
-if(!$result) {   
-    echo 'failed';
+if(!$mail) {   
+    $_SESSION['message'] = 'An error occurred while sending email';
 } else {
-    echo 'success';
+    $_SESSION['message'] ='Your message has been submitted to michael.robinson@cs.fiu.edu
+    <br>         
+thank you';
 }
 ?>

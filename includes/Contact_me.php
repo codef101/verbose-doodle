@@ -1,21 +1,21 @@
  <!-- *****************************
-  Page Name  : current page name 
-  Author     : Your Name 
-  Your URL   : ocelot-aul.fiu/~____
-  Course     : CGS 4854 session, date, and time
-  Program #  : Assignment #
-  Purpose    : Describe what this page does 
+  Page Name  : Contact_me_Controller
+  Author     : Juwane Jules
+  Your URL   : ocelot.aul.fiu.edu/~jjule017
+  Course     : CGS 4854  Pgm3b_4
+  Purpose    : Calls ContactMeSend.php 
 
-  Due Date   : MM/DD/YYYY 
+  Due Date   : 07/02/2022
 
   Certification: 
 
   I hereby certify that this work is my own and none of it is the work of any other person. 
 
-  ..........{ your full name }..........
+  ..........Juwane Jules..........
   ***************************** -->
 
 <?php
+session_start();
 require('YourLastName_header.html');
 require('../mainMenu.php');
 ?>
@@ -88,7 +88,22 @@ require('../mainMenu.php');
                   <option value="value1">value2</option>
               </select>
           </div>
-        <?php
+       
+        <div class="input-group" style="padding-left: 8rem">
+            <button class="button" type="submit" id="save" name="submit"><span> Submit</span></button>
+            <button class="button" id="clear" type="clear" name="clear"><span> Clear</span></button>
+        </div>
+    </form>
+</div>
+<div style="margin: 3rem 0px 0px;">
+
+<?php
+
+require('../mainMenu.php');
+
+?>
+</div>
+<?php
         if (isset($_SESSION['message'])) {
         ?>
             <div class="alert" id="message" style="background-color: <?= isset($_SESSION['type']) ? $_SESSION['type'] : 'blue' ?>;">
@@ -101,17 +116,3 @@ require('../mainMenu.php');
         <?php
         }
         ?>
-        <div class="input-group" style="padding-left: 8rem">
-            <button class="button" type="submit" id="save" name="submit"><span> Submit</span></button>
-            <button class="button" id="clear" type="clear" name="clear"><span> Clear</span></button>
-        </div>
-    </form>
-</div>
-<div style="margin: 8rem 0px 0px;">
-
-<?php
-
-require('../mainMenu.php');
-
-?>
-</div>

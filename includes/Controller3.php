@@ -1,18 +1,17 @@
-  <!-- *****************************
-  Page Name  : current page name 
-  Author     : Your Name 
-  Your URL   : ocelot-aul.fiu/~____
-  Course     : CGS 4854 session, date, and time
-  Program #  : Assignment #
-  Purpose    : Describe what this page does 
+ <!-- *****************************
+  Page Name  : Contact_me_Controller
+  Author     : Juwane Jules
+  Your URL   : ocelot.aul.fiu.edu/~jjule017
+  Course     : CGS 4854  Pgm3b_4
+  Purpose    : Calls ContactMeSend.php 
 
-  Due Date   : MM/DD/YYYY 
+  Due Date   : 07/02/2022
 
   Certification: 
 
   I hereby certify that this work is my own and none of it is the work of any other person. 
 
-  ..........{ your full name }..........
+  ..........Juwane Jules..........
   ***************************** -->
 
   <?php

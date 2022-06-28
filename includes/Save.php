@@ -1,3 +1,18 @@
+ <!-- *****************************
+  Page Name  : Contact_me_Controller
+  Author     : Juwane Jules
+  Your URL   : ocelot.aul.fiu.edu/~jjule017
+  Course     : CGS 4854  Pgm3b_4
+  Purpose    : Calls ContactMeSend.php 
+
+  Due Date   : 07/02/2022
+
+  Certification: 
+
+  I hereby certify that this work is my own and none of it is the work of any other person. 
+
+  ..........Juwane Jules..........
+  ***************************** -->
 <?php
 
 require('db.php');
@@ -14,13 +29,29 @@ if (mysqli_num_rows($res) > 0) {
 
 } else {
 
-    $query = 'insert into customers(customerid,telephone,lastname,firstname,address,city,state,dropdowns,zip,country,comments,coffee,major)
-    values("' . $_POST['customerid'] . '","' . $_POST['telephone'] . '","' . $_POST['lastname'] . ' ","' . $_POST['firstname'] . ' ","' . $_POST['address'] . ' ","' . $_POST['city'] . ' ","' . $_POST['state'] . ' ","' . $_POST['dropdowns'] . ' ","' . $_POST['zip'] . ' ","' . $_POST['country'] . ' ","' . $_POST['comments'] . ' ","' .    $_POST['coffee'] . ' ","' . $_POST['major'] . '")';
+    $query = 'insert into customers
+    (customerid,telephone,email,lastname,firstname,address,city,state,dropdowns,zip,country,comments,coffee,major)
+
+    values("
+    ' . $_POST['customerid'] . '",
+    "' . $_POST['telephone'] . '",
+    "'. $_POST['email'] . '",
+    "' . $_POST['lastname'] . ' ",
+    "' . $_POST['firstname'] . ' ",
+    "' . $_POST['address'] . ' ",
+    "' . $_POST['city'] . ' ",
+    "' . $_POST['state'] . ' ",
+    "' . $_POST['dropdowns'] . ' ",
+    "' . $_POST['zip'] . ' ",
+    "' . $_POST['country'] . ' ",
+    "' . $_POST['comments'] . ' ",
+    "' .    $_POST['coffee'] . ' ",
+    "' . $_POST['major'] . '")';
     $cur = mysqli_query($conn, $query);
 
 
     if (!$cur) {
-        $_SESSION['message'] = 'An error occurred while inserting data' . mysqli_error($conn);
+        $_SESSION['message'] = 'An error occurred while inserting data: ' . mysqli_error($conn);
         $_SESSION['type'] = 'red';
     } else {
 

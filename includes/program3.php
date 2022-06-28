@@ -1,18 +1,17 @@
-  <!-- *****************************
-  Page Name  : current page name 
-  Author     : Your Name 
-  Your URL   : ocelot-aul.fiu/~____
-  Course     : CGS 4854 session, date, and time
-  Program #  : Assignment #
-  Purpose    : Describe what this page does 
+ <!-- *****************************
+  Page Name  : Contact_me_Controller
+  Author     : Juwane Jules
+  Your URL   : ocelot.aul.fiu.edu/~jjule017
+  Course     : CGS 4854  Pgm3b_4
+  Purpose    : Calls ContactMeSend.php 
 
-  Due Date   : MM/DD/YYYY 
+  Due Date   : 07/02/2022
 
   Certification: 
 
   I hereby certify that this work is my own and none of it is the work of any other person. 
 
-  ..........{ your full name }..........
+  ..........Juwane Jules..........
   ***************************** -->
 
   <?php
@@ -33,7 +32,7 @@
           </div>
           <div class="input-group">
               <label for="Email">Email </label>
-              <input type="email" id="email" name="email" value="<?= isset($_GET['email']) ? $_GET['email'] : '' ?>">
+              <input type="email" id="email" name="email" value="<?=isset($_GET['email']) ? $_GET['email'] : '' ?>">
           </div>
           <div class="input-group">
               <label for="lastname">Last Name </label>
@@ -69,8 +68,7 @@
           <div class="input-group">
               <label for="dropdowns">Dropdowns </label>
               <select name="dropdowns" id="country" style="border:none;border-bottom:1px solid grey;width:100px">
-                  <option value="">dropdowns</option>
-
+                  <?php echo isset($_GET['dropdown']) ? "<option value='".$_GET['dropdown']."'>".$_GET['dropdown']."</option>" : '<option value="">choose</option>' ?>
                   <option value="value1">value1</option>
                   <option value="value1">value2</option>
               </select>
@@ -78,7 +76,7 @@
           <br>
           <div class="input-group">
               <label for="comments">Comments </label>
-              <textarea name="comments" id="comments" cols="20" rows="5" value="<?= isset($_GET['comments']) ? $_GET['comments'] : '' ?>"></textarea>
+              <textarea name="comments" id="comments" cols="20" rows="5"><?= isset($_GET['comments']) ? $_GET['comments'] : '' ?></textarea>
           </div>
           <div class="input-group">
               <label for="comments">Coffee </label>
